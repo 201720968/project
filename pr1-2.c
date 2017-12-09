@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int sam[3][3]={{0}};
+int sam[7][7]={{0}};
 
 void intro_rule();
 int find_win(void);
@@ -10,16 +10,20 @@ int main(void)
 {
     int i,j;
     int num;
-    int a=2;
-    int b=2;
-    int c=2;
+    int a=6;
+    int b=6;
+    int c=6;
+    int d=6;
+    int e=6;
+    int f=6;
+    int g=6;
     int end;
 
     intro_rule();
 
-    for(i=0;i<3;i++)
+    for(i=0;i<7;i++)
     {
-        for(j=0;j<3;j++)
+        for(j=0;j<7;j++)
         {
             sam[i][j]=0;
         }
@@ -31,9 +35,9 @@ int main(void)
         scanf("%d",&num);
         if(num==0)
         {
-            for(i=0;i<3;i++)
+            for(i=0;i<7;i++)
             {
-                for(j=0;j<3;j++)
+                for(j=0;j<7;j++)
                 {
                     printf("%5d",sam[i][j]);
                 }
@@ -157,9 +161,9 @@ void intro_rule()
     printf("\n");
     printf("\n");
     printf("game map :\n");
-    for(i=0;i<3;i++)
+    for(i=0;i<7;i++)
     {
-        for(j=0;j<3;j++)
+        for(j=0;j<7;j++)
         {
             printf("%5d",sam[i][j]);
         }
@@ -175,20 +179,20 @@ void intro_rule()
     printf("if pl or p2 enter n(0,1,2,3),1 or 2 could be in n(0,1,2,3) row of the lowest column that should have 0. if there is 1 or 2, your number go to directly above.");
     printf("\n ex)");
     printf("if p1 enter 1. \n");
-    sam[2][0]=1;
-    for(i=0;i<3;i++)
+    sam[6][0]=1;
+    for(i=0;i<7;i++)
     {
-        for(j=0;j<3;j++)
+        for(j=0;j<7;j++)
         {
             printf("%5d",sam[i][j]);
         }
         printf("\n");
     }
     printf("then p2 enter 1.\n");
-    sam[1][0]=2;
-    for(i=0;i<3;i++)
+    sam[5][0]=2;
+    for(i=0;i<7;i++)
     {
-        for(j=0;j<3;j++)
+        for(j=0;j<7;j++)
         {
             printf("%5d",sam[i][j]);
         }
