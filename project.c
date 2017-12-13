@@ -14,6 +14,7 @@ int main(void)
     int end;
     int row;
     int i,j;
+    char pic;
 
     intro_rule();
 
@@ -24,7 +25,6 @@ int main(void)
             sam[i][j]=0;
         }
     }
-
     while(1)
     {
         pl=1;
@@ -36,12 +36,28 @@ int main(void)
         if(end==1)
         {
             printf("it's p1's victory!\n");
+            for(i=0;i<7;i++)
+            {
+                for(j=0;j<7;j++)
+                {
+                    printf("%3d",sam[i][j]);
+                }
+                printf("\n");
+            }
             break;
         }
         end=draw_game();
         if(end==2)
         {
             printf("it's draw! \n");
+            for(i=0;i<7;i++)
+            {
+                for(j=0;j<7;j++)
+                {
+                    printf("%3d",sam[i][j]);
+                }
+                printf("\n");
+            }
             break;
         }
         pl=2;
@@ -53,12 +69,28 @@ int main(void)
         if(end==1)
         {
             printf("it's p2's victory!\n");
+            for(i=0;i<7;i++)
+            {
+                for(j=0;j<7;j++)
+                {
+                    printf("%3d",sam[i][j]);
+                }
+                printf("\n");
+            }
             break;
         }
         end=draw_game();
         if(end==2)
         {
             printf("it's draw! \n");
+            for(i=0;i<7;i++)
+            {
+                for(j=0;j<7;j++)
+                {
+                    printf("%3d",sam[i][j]);
+                }
+                printf("\n");
+            }
             break;
         }
     }
@@ -82,7 +114,7 @@ int main_func(int player, int number)
         {
             for(j=0;j<7;j++)
             {
-                printf("%5d",sam[i][j]);
+                printf("%3d",sam[i][j]);
             }
             printf("\n");
         }
@@ -92,7 +124,7 @@ int main_func(int player, int number)
         if(a<=-1)
         {
             printf("mistake. again.\n");
-            printf("enter the number!(0,1,2,3,4,5,6,7)");
+            printf("enter the number!(0,1,2,3,4,5,6,7)\n");
             scanf("%d",&number);
             mis=main_func(player,number);
             return(mis);
@@ -106,7 +138,7 @@ int main_func(int player, int number)
         if(b<=-1)
         {
             printf("mistake. again.\n");
-            printf("enter the number!(0,1,2,3,4,5,6,7)");
+            printf("enter the number!(0,1,2,3,4,5,6,7) \n");
             scanf("%d",&number);
             mis=main_func(player,number);
             return(mis);
@@ -120,7 +152,7 @@ int main_func(int player, int number)
         if(c<=-1)
         {
             printf("mistake. again.\n");
-            printf("enter the number!(0,1,2,3,4,5,6,7)");
+            printf("enter the number!(0,1,2,3,4,5,6,7)\n");
             scanf("%d",&number);
             mis=main_func(player,number);
             return(mis);
@@ -134,7 +166,7 @@ int main_func(int player, int number)
         if(d<=-1)
         {
             printf("mistake. again. \n");
-            printf("enter the number!(0,1,2,3,4,5,6,7)");
+            printf("enter the number!(0,1,2,3,4,5,6,7)\n");
             scanf("%d",&number);
             mis=main_func(player,number);
             return(mis);
@@ -148,7 +180,7 @@ int main_func(int player, int number)
         if(e<=-1)
         {
             printf("mistake. again. \n");
-            printf("enter the number!(0,1,2,3,4,5,6,7)");
+            printf("enter the number!(0,1,2,3,4,5,6,7)\n");
             scanf("%d",&number);
             mis=main_func(player,number);
             return(mis);
@@ -162,7 +194,7 @@ int main_func(int player, int number)
         if(f<=-1)
         {
             printf("mistake. again. \n");
-            printf("enter the number!(0,1,2,3,4,5,6,7)");
+            printf("enter the number!(0,1,2,3,4,5,6,7)\n");
             scanf("%d",&number);
             mis=main_func(player,number);
             return(mis);
@@ -175,7 +207,6 @@ int main_func(int player, int number)
     {
         if(g<=-1)
         {
-            sam[g][7]=0;
             printf("mistake. again. \n");
             printf("enter the number!(0,1,2,3,4,5,6,7)\n");
             scanf("%d",&number);
@@ -216,7 +247,7 @@ void intro_rule()
     {
         for(j=0;j<7;j++)
         {
-            printf("%5d",sam[i][j]);
+            printf("%3d",sam[i][j]);
         }
         printf("\n");
     }
@@ -228,7 +259,7 @@ void intro_rule()
     printf("second player name: p2\n");
     printf("p1 can put 1\n");
     printf("p2 can put 2\n");
-    printf("p1 or p2 can enter 1,2,3,0.\n");
+    printf("p1 or p2 can enter 1,2,3,4,5,6,7,0.\n");
     printf("if pl or p2 enter n(0,1,2,3,4,5,6,7),1 or 2 could be in n(0,1,2,3,4,5,6,7) row of the lowest column that should have 0. if there is 1 or 2, your number go to directly above.");
     printf("please enter.");
     a=getchar();
@@ -270,67 +301,54 @@ int find_win(int row,int col,int player)
     int a;
     if((sam[row][col]==player)&&(sam[row][col+1]==player)&&(sam[row][col+2]==player)&&(sam[row][col+3]==player))
     {
-        printf("1");
         a=1;
     }
     if((sam[row][col-1]==player)&&(sam[row][col]==player)&&(sam[row][col+1]==player)&&(sam[row][col+2]==player))
     {
-        printf("2");
         a=1;
     }
     if((sam[row][col-2]==player)&&(sam[row][col-1]==player)&&(sam[row][col]==player)&&(sam[row][col+1]==player))
     {
-        printf("3");
         a=1;
     }
     if((sam[row][col-3]==player)&&(sam[row][col-2]==player)&&(sam[row][col-1]==player)&&(sam[row][col]==player))
     {
-        printf("4");
         a=1;
     }
     if((sam[row][col]==player)&&(sam[row+1][col]==player)&&(sam[row+2][col]==player)&&(sam[row+3][col]==player))
     {
-        printf("5");
         a=1;
     }
     if((sam[row][col]==player)&&(sam[row-1][col+1]==player)&&(sam[row-2][col+2]==player)&&(sam[row-3][col+3]==player))
     {
-        printf("6");
         a=1;
     }
     if((sam[row+1][col-1]==player)&&(sam[row][col]==player)&&(sam[row-1][col+1]==player)&&(sam[row-2][col+2]==player))
     {
-        printf("7");
         a=1;
     }
     if((sam[row+2][col-2]==player)&&(sam[row+1][col-1]==player)&&(sam[row][col]==player)&&(sam[row-1][col+1]==player))
     {
-        printf("8");
         a=1;
     }
     if((sam[row+3][col-3]==player)&&(sam[row+2][col-2]==player)&&(sam[row+1][col-1]==player)&&(sam[row][col]==player))
     {
-        printf("9");
         a=1;
     }
     if((sam[row][col]==player)&&(sam[row-1][col-1]==player)&&(sam[row-2][col-2]==player)&&(sam[row-3][col-3]==player))
     {
-        printf("10");
         a=1;
     }
     if((sam[row+1][col+1]==player)&&(sam[row][col]==player)&&(sam[row-1][col-1]==player)&&(sam[row-2][col-2]==player))
     {
-        printf("11");
         a=1;
     }
     if((sam[row+2][col+2]==player)&&(sam[row+1][col+1]==player)&&(sam[row][col]==player)&&(sam[row-1][col-1]==player))
     {
-        printf("12");
         a=1;
     }
     if((sam[row+3][col+3]==player)&&(sam[row+2][col+2]==player)&&(sam[row+1][col+1]==player)&&(sam[row][col]==player))
     {
-        printf("13");
         a=1;
     }
     return (a);
