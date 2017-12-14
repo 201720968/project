@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<termio.h>
 #include<stdlib.h>
 
 int sam[7][8]={{0}};
