@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<termio.h>
+#include<stdlib.h>
 
 int sam[7][8]={{0}};
 
@@ -31,6 +33,7 @@ int main(void)
         printf("p1 turn! \n");
         printf("enter the number!(0,1,2,3,4,5,6,7) \n");
         scanf("%d",&num);
+        system("clear");
         row=main_func(pl,num);
         end=find_win(row,num-1,pl);
         if(end==1)
@@ -64,6 +67,7 @@ int main(void)
         printf("p2 turn! \n");
         printf("enter the number!(0,1,2,3,4,5,6,7) \n");
         scanf("%d",&num);
+        system("clear");
         row=main_func(pl,num);
         end=find_win(row,num-1,pl);
         if(end==1)
@@ -231,6 +235,7 @@ void intro_rule()
 {
     int i,j;
     int a;
+    system("clear");
     printf("HELLO! \n");
     printf("GAME : BBM(Blind Bottom Mok)\n");
     printf("please enter.");
@@ -270,7 +275,7 @@ void intro_rule()
     {
         for(j=0;j<7;j++)
         {
-            printf("%5d",sam[i][j]);
+            printf("%3d",sam[i][j]);
         }
         printf("\n");
     }
@@ -280,7 +285,7 @@ void intro_rule()
     {
         for(j=0;j<7;j++)
         {
-            printf("%5d",sam[i][j]);
+            printf("%3d",sam[i][j]);
         }
         printf("\n");
     }
@@ -294,6 +299,7 @@ void intro_rule()
     printf("\n");
     printf("if you want play game, please enter. \n");
     a=getchar();
+    system("clear");
 }
 
 int find_win(int row,int col,int player)
