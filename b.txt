@@ -1,0 +1,43 @@
+HELLO!
+GAME : BBM(Blind Bottom Mok)
+    
+
+game map :
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0 
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+
+you can't see this map usually.
+
+you are p1.
+you can put 1
+computer can put 2
+
+you can enter -1,0,1,2,3,4,5,6,7.
+if you enter n(1,2,3,4,5,6,7),1 could be in n(1,2,3,4,5,6,7) row of the lowest column that should have 0. if there is 1 or 2, your number go to directly above.
+if you enter 0, you can see the map.
+    
+ex)
+if you enter 1. 
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+1 0 0 0 0 0 0
+
+then you enter 1 again.
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+1 0 0 0 0 0 0
+1 0 0 0 0 0 0
+
+let's play the game!
